@@ -1,0 +1,23 @@
+import { test, expect, afterEach } from 'vitest';
+import { mkdtemp, rm, writeFile, mkdir } from 'node:fs/promises';
+import { tmpdir } from 'node:os';
+import { join } from 'node:path';
+import { createApp } from '../server/app';
+const dirs: string[] = [];
+afterEach(async () => { await Promise.all(dirs.splice(0).map(d => rm(d, { recursive: true, force: true }))); });
+test('本地会话、Origin、Host、媒体类型与输入大小受到检查', async () => {
+  const dir = await mkdtemp(join(tmpdir(), 'ramune-api-')); dirs.push(dir); await writeFile(join(dir, 'index.html'), '<html>真实本地服务</html>');
+  const { app } = createApp({ dir: join(dir, 'data'), port: 4317, clientDir: dir });
+  const call = (path: string, init?: RequestInit) => app.request(`http://127.0.0.1:4317${path}`, init);
+  expect((await call('/api/runs')).status).toBe(401);
+  expect((await call('/api/health', { headers: { host: 'evil.test' } })).status).toBe(403);
+  const root = await call('/'); expect(root.status).toBe(200);
+  const cookie = root.headers.get('set-cookie')!.split(';')[0];
+  expect((await call('/api/runs', { headers: { cookie } })).status).toBe(200);
+  expect((await call('/api/workspaces/demo', { method: 'POST', headers: { cookie, origin: 'https://evil.test', 'content-type': 'application/json' }, body: '{}' })).status).toBe(403);
+  expect((await call('/api/workspaces/demo', { method: 'POST', headers: { cookie, 'content-type': 'text/plain' }, body: '{}' })).status).toBe(415);
+  expect((await call('/api/runs', { method: 'POST', headers: { cookie, 'content-type': 'application/json' }, body: '{}' })).status).toBe(400);
+  expect((await call('/api/runs', { method: 'POST', headers: { cookie, 'content-type': 'application/json' }, body: JSON.stringify({ huge: 'x'.repeat(1024 * 1024) }) })).status).toBe(413);
+  const result = await call('/api/workspaces/demo', { method: 'POST', headers: { cookie, 'content-type': 'application/json' }, body: '{}' });
+  expect(result.status).toBe(200); const demo = await result.json(); expect(demo.workspace).toContain('acceptance-');
+});
