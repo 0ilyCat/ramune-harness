@@ -1,0 +1,17 @@
+{
+  "stdout": {
+    "path": "/home/dwx/.local/share/ramune-harness-final-qa-20261101/data/artifacts/c43011f0-2587-4d97-b8a0-ed80a313c6e2/1dcfacab-99d5-4a23-881d-d2793b8fd851/stdout.log",
+    "bytes": 2944,
+    "sha256": "17ef4f5d4c63d40e4793e7ecf4cfa311fff78185375b57f7988ac207fae966d4",
+    "truncated": false
+  },
+  "stderr": {
+    "path": "/home/dwx/.local/share/ramune-harness-final-qa-20261101/data/artifacts/c43011f0-2587-4d97-b8a0-ed80a313c6e2/1dcfacab-99d5-4a23-881d-d2793b8fd851/stderr.log",
+    "bytes": 0,
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "truncated": false
+  },
+  "exitCode": 143,
+  "cancelled": true,
+  "timedOut": false
+}

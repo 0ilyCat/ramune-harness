@@ -1,0 +1,302 @@
+{
+  "id": "0dc5d528-ac00-4eba-9510-70d2cbb2689f",
+  "status": "completed",
+  "createdAt": "2026-11-01T07:27:00.494Z",
+  "updatedAt": "2026-11-01T07:27:01.794Z",
+  "request": {
+    "workflow": {
+      "version": 1,
+      "name": "无模型 · 真实进程验收",
+      "entry": "input",
+      "nodes": [
+        {
+          "id": "input",
+          "type": "card",
+          "position": {
+            "x": 0,
+            "y": 0
+          },
+          "data": {
+            "label": "显式任务",
+            "kind": "value",
+            "instructions": "{{prompt}}",
+            "disabled": false
+          }
+        },
+        {
+          "id": "check",
+          "type": "card",
+          "position": {
+            "x": 320,
+            "y": 0
+          },
+          "data": {
+            "label": "真实 Node 检查",
+            "kind": "check",
+            "instructions": "",
+            "executable": "node",
+            "args": [
+              "-e",
+              "console.log(\"BROWSER_REAL_PROCESS_OK\")"
+            ],
+            "disabled": false
+          }
+        },
+        {
+          "id": "out",
+          "type": "card",
+          "position": {
+            "x": 320,
+            "y": 260
+          },
+          "data": {
+            "label": "交付",
+            "kind": "output",
+            "instructions": "",
+            "disabled": false
+          }
+        }
+      ],
+      "edges": [
+        {
+          "id": "1",
+          "source": "input",
+          "target": "check",
+          "sourceHandle": "success"
+        },
+        {
+          "id": "2",
+          "source": "check",
+          "target": "out",
+          "sourceHandle": "success"
+        }
+      ]
+    },
+    "prompt": "浏览器触发真实确定性执行",
+    "workspace": "/home/dwx/.local/share/ramune-harness-final-qa-20261101/data/workspaces/acceptance-7a42b279",
+    "maxSteps": 12,
+    "timeoutSeconds": 900,
+    "authorized": true
+  },
+  "revision": "50aa0584070423ae875f16226e7009104863d28061bd29482d1072a0b4fdcebe",
+  "steps": 3,
+  "invocations": [
+    {
+      "id": "123844c2-2b59-4b2a-b831-0e521dd7ba39",
+      "nodeId": "input",
+      "step": 1,
+      "status": "completed",
+      "startedAt": "2026-11-01T07:27:00.528Z",
+      "artifactDir": "/home/dwx/.local/share/ramune-harness-final-qa-20261101/data/artifacts/0dc5d528-ac00-4eba-9510-70d2cbb2689f/123844c2-2b59-4b2a-b831-0e521dd7ba39",
+      "output": "浏览器触发真实确定性执行",
+      "outcome": "success",
+      "finishedAt": "2026-11-01T07:27:00.620Z"
+    },
+    {
+      "id": "bf18a00a-16c9-40a2-a337-736d0cd49902",
+      "nodeId": "check",
+      "step": 2,
+      "status": "completed",
+      "startedAt": "2026-11-01T07:27:00.665Z",
+      "artifactDir": "/home/dwx/.local/share/ramune-harness-final-qa-20261101/data/artifacts/0dc5d528-ac00-4eba-9510-70d2cbb2689f/bf18a00a-16c9-40a2-a337-736d0cd49902",
+      "output": "独立检查 通过（exit 0）\nBROWSER_REAL_PROCESS_OK\n\n上一交接：\n浏览器触发真实确定性执行",
+      "outcome": "success",
+      "finishedAt": "2026-11-01T07:27:01.570Z"
+    },
+    {
+      "id": "17c6156c-0fd5-4720-808a-5e16d1b997ad",
+      "nodeId": "out",
+      "step": 3,
+      "status": "completed",
+      "startedAt": "2026-11-01T07:27:01.634Z",
+      "artifactDir": "/home/dwx/.local/share/ramune-harness-final-qa-20261101/data/artifacts/0dc5d528-ac00-4eba-9510-70d2cbb2689f/17c6156c-0fd5-4720-808a-5e16d1b997ad",
+      "output": "独立检查 通过（exit 0）\nBROWSER_REAL_PROCESS_OK\n\n上一交接：\n浏览器触发真实确定性执行",
+      "outcome": "success",
+      "finishedAt": "2026-11-01T07:27:01.748Z"
+    }
+  ],
+  "events": [
+    {
+      "seq": 1,
+      "time": "2026-11-01T07:27:00.497Z",
+      "type": "run.started",
+      "data": {
+        "revision": "50aa0584070423ae875f16226e7009104863d28061bd29482d1072a0b4fdcebe",
+        "workspace": "/home/dwx/.local/share/ramune-harness-final-qa-20261101/data/workspaces/acceptance-7a42b279"
+      }
+    },
+    {
+      "seq": 2,
+      "time": "2026-11-01T07:27:00.528Z",
+      "type": "invocation.started",
+      "data": {
+        "label": "显式任务",
+        "kind": "value",
+        "step": 1
+      },
+      "nodeId": "input",
+      "invocationId": "123844c2-2b59-4b2a-b831-0e521dd7ba39"
+    },
+    {
+      "seq": 3,
+      "time": "2026-11-01T07:27:00.572Z",
+      "type": "value.result",
+      "data": {
+        "output": "浏览器触发真实确定性执行"
+      },
+      "nodeId": "input",
+      "invocationId": "123844c2-2b59-4b2a-b831-0e521dd7ba39"
+    },
+    {
+      "seq": 4,
+      "time": "2026-11-01T07:27:00.620Z",
+      "type": "invocation.finished",
+      "data": {
+        "outcome": "success",
+        "output": "浏览器触发真实确定性执行",
+        "nextNodeId": "check"
+      },
+      "nodeId": "input",
+      "invocationId": "123844c2-2b59-4b2a-b831-0e521dd7ba39"
+    },
+    {
+      "seq": 5,
+      "time": "2026-11-01T07:27:00.665Z",
+      "type": "invocation.started",
+      "data": {
+        "label": "真实 Node 检查",
+        "kind": "check",
+        "step": 2
+      },
+      "nodeId": "check",
+      "invocationId": "bf18a00a-16c9-40a2-a337-736d0cd49902"
+    },
+    {
+      "seq": 6,
+      "time": "2026-11-01T07:27:00.707Z",
+      "type": "check.command",
+      "data": {
+        "executable": "node",
+        "args": [
+          "-e",
+          "console.log(\"BROWSER_REAL_PROCESS_OK\")"
+        ],
+        "cwd": "/home/dwx/.local/share/ramune-harness-final-qa-20261101/data/workspaces/acceptance-7a42b279"
+      },
+      "nodeId": "check",
+      "invocationId": "bf18a00a-16c9-40a2-a337-736d0cd49902"
+    },
+    {
+      "seq": 7,
+      "time": "2026-11-01T07:27:01.321Z",
+      "type": "check.input",
+      "data": {
+        "text": "浏览器触发真实确定性执行",
+        "mapping": "previous-node-output"
+      },
+      "nodeId": "check",
+      "invocationId": "bf18a00a-16c9-40a2-a337-736d0cd49902"
+    },
+    {
+      "seq": 8,
+      "time": "2026-11-01T07:27:01.421Z",
+      "type": "process.stdout",
+      "data": {
+        "text": "BROWSER_REAL_PROCESS_OK",
+        "truncated": false
+      },
+      "nodeId": "check",
+      "invocationId": "bf18a00a-16c9-40a2-a337-736d0cd49902"
+    },
+    {
+      "seq": 9,
+      "time": "2026-11-01T07:27:01.480Z",
+      "type": "process.artifacts",
+      "data": {
+        "stdout": {
+          "path": "/home/dwx/.local/share/ramune-harness-final-qa-20261101/data/artifacts/0dc5d528-ac00-4eba-9510-70d2cbb2689f/bf18a00a-16c9-40a2-a337-736d0cd49902/stdout.log",
+          "bytes": 24,
+          "sha256": "61a41881d2127f44167533a13cd12272209d94d2ea66fcdc3acd1db735c4d0b2",
+          "truncated": false
+        },
+        "stderr": {
+          "path": "/home/dwx/.local/share/ramune-harness-final-qa-20261101/data/artifacts/0dc5d528-ac00-4eba-9510-70d2cbb2689f/bf18a00a-16c9-40a2-a337-736d0cd49902/stderr.log",
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "truncated": false
+        },
+        "exitCode": 0,
+        "cancelled": false,
+        "timedOut": false
+      },
+      "nodeId": "check",
+      "invocationId": "bf18a00a-16c9-40a2-a337-736d0cd49902"
+    },
+    {
+      "seq": 10,
+      "time": "2026-11-01T07:27:01.522Z",
+      "type": "check.result",
+      "data": {
+        "output": "BROWSER_REAL_PROCESS_OK",
+        "exitCode": 0
+      },
+      "nodeId": "check",
+      "invocationId": "bf18a00a-16c9-40a2-a337-736d0cd49902"
+    },
+    {
+      "seq": 11,
+      "time": "2026-11-01T07:27:01.570Z",
+      "type": "invocation.finished",
+      "data": {
+        "outcome": "success",
+        "output": "独立检查 通过（exit 0）\nBROWSER_REAL_PROCESS_OK\n\n上一交接：\n浏览器触发真实确定性执行",
+        "nextNodeId": "out"
+      },
+      "nodeId": "check",
+      "invocationId": "bf18a00a-16c9-40a2-a337-736d0cd49902"
+    },
+    {
+      "seq": 12,
+      "time": "2026-11-01T07:27:01.634Z",
+      "type": "invocation.started",
+      "data": {
+        "label": "交付",
+        "kind": "output",
+        "step": 3
+      },
+      "nodeId": "out",
+      "invocationId": "17c6156c-0fd5-4720-808a-5e16d1b997ad"
+    },
+    {
+      "seq": 13,
+      "time": "2026-11-01T07:27:01.681Z",
+      "type": "output.result",
+      "data": {
+        "output": "独立检查 通过（exit 0）\nBROWSER_REAL_PROCESS_OK\n\n上一交接：\n浏览器触发真实确定性执行"
+      },
+      "nodeId": "out",
+      "invocationId": "17c6156c-0fd5-4720-808a-5e16d1b997ad"
+    },
+    {
+      "seq": 14,
+      "time": "2026-11-01T07:27:01.748Z",
+      "type": "invocation.finished",
+      "data": {
+        "outcome": "success",
+        "output": "独立检查 通过（exit 0）\nBROWSER_REAL_PROCESS_OK\n\n上一交接：\n浏览器触发真实确定性执行"
+      },
+      "nodeId": "out",
+      "invocationId": "17c6156c-0fd5-4720-808a-5e16d1b997ad"
+    },
+    {
+      "seq": 15,
+      "time": "2026-11-01T07:27:01.794Z",
+      "type": "run.completed",
+      "data": {
+        "output": "独立检查 通过（exit 0）\nBROWSER_REAL_PROCESS_OK\n\n上一交接：\n浏览器触发真实确定性执行",
+        "steps": 3
+      }
+    }
+  ],
+  "context": "独立检查 通过（exit 0）\nBROWSER_REAL_PROCESS_OK\n\n上一交接：\n浏览器触发真实确定性执行"
+}

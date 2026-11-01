@@ -1,0 +1,6 @@
+{"time":"2026-11-01T07:57:47.030Z","level":"info","event":"server.started","url":"http://127.0.0.1:4323","pid":819,"node":"v24.15.0"}
+{"time":"2026-11-01T07:58:08.204Z","level":"info","event":"run.started","runId":"c43011f0-2587-4d97-b8a0-ed80a313c6e2","seq":1,"trace":"runs/c43011f0-2587-4d97-b8a0-ed80a313c6e2.events.jsonl"}
+{"time":"2026-11-01T07:58:08.298Z","level":"info","event":"invocation.started","runId":"c43011f0-2587-4d97-b8a0-ed80a313c6e2","nodeId":"builder","invocationId":"1dcfacab-99d5-4a23-881d-d2793b8fd851","seq":2,"trace":"runs/c43011f0-2587-4d97-b8a0-ed80a313c6e2.events.jsonl"}
+{"time":"2026-11-01T07:58:08.412Z","level":"info","event":"agent.command","runId":"c43011f0-2587-4d97-b8a0-ed80a313c6e2","nodeId":"builder","invocationId":"1dcfacab-99d5-4a23-881d-d2793b8fd851","seq":4,"trace":"runs/c43011f0-2587-4d97-b8a0-ed80a313c6e2.events.jsonl"}
+{"time":"2026-11-01T08:01:16.217Z","level":"info","event":"process.artifacts","runId":"c43011f0-2587-4d97-b8a0-ed80a313c6e2","nodeId":"builder","invocationId":"1dcfacab-99d5-4a23-881d-d2793b8fd851","seq":12,"exitCode":143,"trace":"runs/c43011f0-2587-4d97-b8a0-ed80a313c6e2.events.jsonl"}
+{"time":"2026-11-01T08:01:16.260Z","level":"info","event":"run.cancelled","runId":"c43011f0-2587-4d97-b8a0-ed80a313c6e2","seq":13,"error":"运行已取消","trace":"runs/c43011f0-2587-4d97-b8a0-ed80a313c6e2.events.jsonl"}

@@ -1,0 +1,23 @@
+{
+  "label": "wsl-cancel-after429",
+  "startedAt": "2026-11-01T08:00:54.043Z",
+  "finishedAt": "2026-11-01T08:00:54.515Z",
+  "command": "node",
+  "args": [
+    "scripts/cancel-qa-run.mjs",
+    "http://127.0.0.1:4323",
+    "c43011f0-2587-4d97-b8a0-ed80a313c6e2"
+  ],
+  "cwd": "D:\\projects\\myproject\\ramune-harness",
+  "exitCode": 3221226505,
+  "stdout": {
+    "path": "D:\\projects\\myproject\\ramune-harness\\.ramune\\evidence\\wsl-gemini38-20261101\\wsl-cancel-after429.stdout.log",
+    "bytes": 1933,
+    "sha256": "61b9396007a10be13d58b1d819671c834c091dc80ba3d57a7c5b3084c0c3586d"
+  },
+  "stderr": {
+    "path": "D:\\projects\\myproject\\ramune-harness\\.ramune\\evidence\\wsl-gemini38-20261101\\wsl-cancel-after429.stderr.log",
+    "bytes": 589,
+    "sha256": "7dd642bdff5dcb572282bc282fd3a140122aa150b284dcf54854561b7d42406a"
+  }
+}

@@ -1,0 +1,20 @@
+node:internal/modules/run_main:107
+    triggerUncaughtException(
+    ^
+
+AssertionError [ERR_ASSERTION]: 运行已取消
++ actual - expected
+
++ 'cancelled'
+- 'completed'
+
+    at file:///D:/projects/myproject/ramune-harness/scripts/live-smoke.mjs:31:12 {
+  generatedMessage: false,
+  code: 'ERR_ASSERTION',
+  actual: 'cancelled',
+  expected: 'completed',
+  operator: 'strictEqual',
+  diff: 'simple'
+}
+
+Node.js v24.19.0

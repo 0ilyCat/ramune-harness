@@ -1,0 +1,26 @@
+{
+  "label": "private-key-scan",
+  "startedAt": "2026-11-01T08:01:42.703Z",
+  "finishedAt": "2026-11-01T08:01:43.290Z",
+  "command": "wsl",
+  "args": [
+    "-d",
+    "Ubuntu-24.04",
+    "--exec",
+    "python3",
+    "/mnt/d/projects/myproject/ramune-harness/scripts/verify-wsl-private-evidence.py",
+    "/mnt/d/projects/myproject/ramune-harness/.ramune/evidence/wsl-gemini38-20261101"
+  ],
+  "cwd": "D:\\projects\\myproject\\ramune-harness",
+  "exitCode": 0,
+  "stdout": {
+    "path": "D:\\projects\\myproject\\ramune-harness\\.ramune\\evidence\\wsl-gemini38-20261101\\private-key-scan.stdout.log",
+    "bytes": 46,
+    "sha256": "bb5df930c5ffaac7c5f915ce6d9a4c3e4cdc1cafdf92a2087edbc6d0f6415215"
+  },
+  "stderr": {
+    "path": "D:\\projects\\myproject\\ramune-harness\\.ramune\\evidence\\wsl-gemini38-20261101\\private-key-scan.stderr.log",
+    "bytes": 132,
+    "sha256": "b280c454d6f559e56eb3f5ed39f3ba084b8d1744a3ff7fe016b21ff86dea1aca"
+  }
+}

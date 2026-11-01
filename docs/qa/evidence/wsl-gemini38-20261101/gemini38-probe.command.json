@@ -1,0 +1,26 @@
+{
+  "label": "gemini38-probe",
+  "startedAt": "2026-11-01T07:55:19.710Z",
+  "finishedAt": "2026-11-01T07:55:24.985Z",
+  "command": "wsl",
+  "args": [
+    "-d",
+    "Ubuntu-24.04",
+    "--exec",
+    "python3",
+    "/mnt/d/projects/myproject/ramune-harness/scripts/probe-claude-proxy.py",
+    "/home/dwx/.local/share/ramune-harness-final-qa-20261101/claude-settings.json"
+  ],
+  "cwd": "D:\\projects\\myproject\\ramune-harness",
+  "exitCode": 0,
+  "stdout": {
+    "path": "D:\\projects\\myproject\\ramune-harness\\.ramune\\evidence\\wsl-gemini38-20261101\\gemini38-probe.stdout.log",
+    "bytes": 1335,
+    "sha256": "114a12d2f301b51b11402991f1684f268b3a64c8f2973c8140360239810001e2"
+  },
+  "stderr": {
+    "path": "D:\\projects\\myproject\\ramune-harness\\.ramune\\evidence\\wsl-gemini38-20261101\\gemini38-probe.stderr.log",
+    "bytes": 132,
+    "sha256": "b280c454d6f559e56eb3f5ed39f3ba084b8d1744a3ff7fe016b21ff86dea1aca"
+  }
+}

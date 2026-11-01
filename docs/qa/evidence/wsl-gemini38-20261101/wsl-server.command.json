@@ -1,0 +1,25 @@
+{
+  "label": "wsl-server",
+  "startedAt": "2026-11-01T07:57:46.432Z",
+  "finishedAt": "2026-11-01T08:01:41.185Z",
+  "command": "wsl",
+  "args": [
+    "-d",
+    "Ubuntu-24.04",
+    "--exec",
+    "bash",
+    "/mnt/d/projects/myproject/ramune-harness/scripts/start-wsl-qa.sh"
+  ],
+  "cwd": "D:\\projects\\myproject\\ramune-harness",
+  "exitCode": 0,
+  "stdout": {
+    "path": "D:\\projects\\myproject\\ramune-harness\\.ramune\\evidence\\wsl-gemini38-20261101\\wsl-server.stdout.log",
+    "bytes": 1378,
+    "sha256": "5368ebb5906abcef23ba38d585fdc8d23986b6639e63e73c4742f01a44d48702"
+  },
+  "stderr": {
+    "path": "D:\\projects\\myproject\\ramune-harness\\.ramune\\evidence\\wsl-gemini38-20261101\\wsl-server.stderr.log",
+    "bytes": 132,
+    "sha256": "b280c454d6f559e56eb3f5ed39f3ba084b8d1744a3ff7fe016b21ff86dea1aca"
+  }
+}

@@ -1,0 +1,21 @@
+{
+  "label": "wsl-live-gemini38",
+  "startedAt": "2026-11-01T07:58:04.940Z",
+  "finishedAt": "2026-11-01T08:01:17.848Z",
+  "command": "node",
+  "args": [
+    "scripts/live-smoke.mjs"
+  ],
+  "cwd": "D:\\projects\\myproject\\ramune-harness",
+  "exitCode": 1,
+  "stdout": {
+    "path": "D:\\projects\\myproject\\ramune-harness\\.ramune\\evidence\\wsl-gemini38-20261101\\wsl-live-gemini38.stdout.log",
+    "bytes": 1889,
+    "sha256": "77996834f55f2d0a4c45168f507a0f9d4ed565535f851755b25f86433495a18c"
+  },
+  "stderr": {
+    "path": "D:\\projects\\myproject\\ramune-harness\\.ramune\\evidence\\wsl-gemini38-20261101\\wsl-live-gemini38.stderr.log",
+    "bytes": 437,
+    "sha256": "e9a1cba3869308ff46416bb134ca707557e7bcf98781e081c69f9083406aa159"
+  }
+}

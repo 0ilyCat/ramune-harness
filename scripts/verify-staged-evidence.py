@@ -1,10 +1,14 @@
 import hashlib
 import json
 import pathlib
+import re
 import subprocess
+import sys
 
 repository = pathlib.Path(__file__).resolve().parent.parent
-root = pathlib.Path('docs/qa/evidence/2026-11-01')
+label = sys.argv[1] if len(sys.argv) > 1 else '2026-11-01'
+assert re.fullmatch(r'[a-z0-9-]+', label)
+root = pathlib.Path('docs/qa/evidence') / label
 manifest = json.loads((repository / root / 'manifest.json').read_text(encoding='utf-8'))
 for entry in manifest:
     path = (root / entry['path']).as_posix()

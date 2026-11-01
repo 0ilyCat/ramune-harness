@@ -1,0 +1,15 @@
+{"stage":"discovery","agents":[{"id":"codex","name":"Codex","installed":false,"supported":true,"auth":"unknown","detail":"当前服务的 PATH 中未找到可执行文件"},{"id":"claude","name":"Claude Code","path":"/home/dwx/.nvm/versions/node/v24.15.0/bin/claude","installed":true,"supported":true,"version":"2.1.160 (Claude Code)","auth":"ready","detail":"已配置 CLI Proxy，本地凭据检查通过；有效性由真实调用验证"},{"id":"openclaw","name":"OpenClaw","installed":false,"supported":true,"auth":"unknown","detail":"当前服务的 PATH 中未找到可执行文件"},{"id":"gemini","name":"Gemini CLI","installed":false,"supported":false,"auth":"unknown","detail":"当前服务的 PATH 中未找到可执行文件"},{"id":"opencode","name":"OpenCode","installed":false,"supported":false,"auth":"unknown","detail":"当前服务的 PATH 中未找到可执行文件"}]}
+{"stage":"started","id":"c43011f0-2587-4d97-b8a0-ed80a313c6e2","workspace":"/home/dwx/.local/share/ramune-harness-final-qa-20261101/data/workspaces/acceptance-a075e921","agent":"claude","model":"gemini-3.8-flash-high"}
+{"seq":1,"type":"run.started"}
+{"seq":2,"type":"invocation.started","node":"builder"}
+{"seq":3,"type":"agent.prompt","node":"builder"}
+{"seq":4,"type":"agent.command","node":"builder"}
+{"seq":5,"type":"agent.event","node":"builder","providerType":"system"}
+{"seq":6,"type":"agent.event","node":"builder","providerType":"system"}
+{"seq":7,"type":"agent.event","node":"builder","providerType":"system"}
+{"seq":8,"type":"agent.event","node":"builder","providerType":"system"}
+{"seq":9,"type":"agent.event","node":"builder","providerType":"system"}
+{"seq":10,"type":"agent.event","node":"builder","providerType":"system"}
+{"seq":11,"type":"agent.event","node":"builder","providerType":"system"}
+{"seq":12,"type":"process.artifacts","node":"builder"}
+{"seq":13,"type":"run.cancelled"}

@@ -1,0 +1,12 @@
+import assert from 'node:assert/strict';
+const [base, id] = process.argv.slice(2);
+const root = await fetch(base);
+const cookie = root.headers.getSetCookie().map(value => value.split(';')[0]).join('; ');
+const record = await (await fetch(`${base}/api/runs/${id}`, { headers: { cookie } })).json();
+assert.equal(record.status, 'running');
+assert.ok(record.events.some(event => event.type === 'agent.event' && event.data.subtype === 'api_retry' && event.data.error_status === 429), '只取消已确认 429 的本次 QA');
+console.log('QA_RETRY_EVIDENCE ' + JSON.stringify(record.events.filter(event => event.type === 'agent.event' && event.data.subtype === 'api_retry')));
+const response = await fetch(`${base}/api/runs/${id}/cancel`, { method: 'POST', headers: { cookie, 'Content-Type': 'application/json' }, body: '{}' });
+const result = await response.json();
+assert.ok(response.ok, JSON.stringify(result));
+console.log('QA_CANCEL_REQUEST ' + JSON.stringify({ id, response: result, reason: 'Repeated native API 429; preserve quota and evidence' }));

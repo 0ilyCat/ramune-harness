@@ -9,13 +9,16 @@ async function api(path, body) {
 }
 const agents = await api('/agents');
 console.log(JSON.stringify({ stage: 'discovery', agents }));
-const agent = agents.find(a => a.installed && a.supported && a.auth === 'ready');
+const agent = agents.find(a => a.installed && a.supported && a.auth === 'ready' && (!process.env.RAMUNE_LIVE_AGENT || a.id === process.env.RAMUNE_LIVE_AGENT));
 assert.ok(agent, '当前环境没有已认证可执行的 Harness');
 const demo = await api('/workspaces/demo', {});
 const workflow = await api('/workflow');
-for (const node of workflow.nodes) if (node.data.kind === 'agent') node.data.agentId = agent.id;
+for (const node of workflow.nodes) if (node.data.kind === 'agent') {
+  node.data.agentId = agent.id;
+  if (process.env.RAMUNE_LIVE_MODEL) node.data.model = process.env.RAMUNE_LIVE_MODEL;
+}
 const run = await api('/runs', { workflow, ...demo, maxSteps: 12, timeoutSeconds: 600, authorized: true });
-console.log(JSON.stringify({ stage: 'started', id: run.id, workspace: demo.workspace }));
+console.log(JSON.stringify({ stage: 'started', id: run.id, workspace: demo.workspace, agent: agent.id, model: process.env.RAMUNE_LIVE_MODEL }));
 let last = 0;
 for (;;) {
   const record = await api(`/runs/${run.id}`);
