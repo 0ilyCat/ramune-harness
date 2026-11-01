@@ -1,0 +1,31 @@
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 2 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  tests/agents.test.ts > 超过展示上限的最终失败仍按完整协议判定，不能降级为成功
+AssertionError: expected +0 to be 1 // Object.is equality
+
+- Expected
++ Received
+
+- 1
++ 0
+
+ ❯ tests/agents.test.ts:15:27
+
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/2]⎯
+
+ FAIL  tests/kernel.test.ts > 顺序执行与持久化 > 普通事件预算已经耗尽时，服务重启仍能保存中断与未知状态
+Error: 事件预算耗尽（10000），请缩小任务范围
+ ❯ Store.event server/store.ts:35:43
+     33|   }
+     34|   event(run: RunRecord, type: string, data: unknown, nodeId?: string, …
+     35|     if (run.events.length >= 10000) throw new Error('事件预算耗尽（10000），请缩小…
+       |                                           ^
+     36|     const event = { seq: run.events.length + 1, time: new Date().toISO…
+     37|     run.events.push(event);
+ ❯ new Store server/store.ts:25:14
+ ❯ tests/kernel.test.ts:72:23
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[2/2]⎯
+

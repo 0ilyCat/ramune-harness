@@ -1,0 +1,12 @@
+{
+  "runId": "3ee3f9ab-e1a2-44ae-a7e1-27e67ab2ed45",
+  "status": "completed",
+  "leftCalls": 5,
+  "rightCalls": 5,
+  "uniqueSessions": 10,
+  "nativeToolCalls": 20,
+  "nativeTranscriptEvents": 110,
+  "round": 5,
+  "value": 10,
+  "steps": 16
+}

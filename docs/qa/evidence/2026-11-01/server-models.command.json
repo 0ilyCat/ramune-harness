@@ -1,0 +1,24 @@
+{
+  "label": "server-models",
+  "startedAt": "2026-11-01T07:05:42.306Z",
+  "finishedAt": "2026-11-01T07:05:48.579Z",
+  "command": "ssh",
+  "args": [
+    "-o",
+    "BatchMode=yes",
+    "tencent",
+    "python3 /tmp/ramune-prepare-qa-20261101.py"
+  ],
+  "cwd": "D:\\projects\\myproject\\ramune-harness",
+  "exitCode": 0,
+  "stdout": {
+    "path": "D:\\projects\\myproject\\ramune-harness\\.ramune\\evidence\\final-qa-20261101\\server-models.stdout.log",
+    "bytes": 1733,
+    "sha256": "a4a7abdebcf0a4e82c0f25f5cb505d0318721d2e86909a0bba807f4e3e22d3bc"
+  },
+  "stderr": {
+    "path": "D:\\projects\\myproject\\ramune-harness\\.ramune\\evidence\\final-qa-20261101\\server-models.stderr.log",
+    "bytes": 0,
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  }
+}

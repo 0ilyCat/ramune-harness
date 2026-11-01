@@ -1,0 +1,22 @@
+{
+  "label": "wsl-status-kept",
+  "startedAt": "2026-11-01T07:43:50.291Z",
+  "finishedAt": "2026-11-01T07:43:50.540Z",
+  "command": "node",
+  "args": [
+    "scripts/qa-status.mjs",
+    "http://127.0.0.1:4318"
+  ],
+  "cwd": "D:\\projects\\myproject\\ramune-harness",
+  "exitCode": 0,
+  "stdout": {
+    "path": "D:\\projects\\myproject\\ramune-harness\\.ramune\\evidence\\final-qa-20261101\\wsl-status-kept.stdout.log",
+    "bytes": 1989,
+    "sha256": "4d1e34fc1ddb1d1666b1ec7317d7ebd15bb719e4bab05b3db3623f08789e92a3"
+  },
+  "stderr": {
+    "path": "D:\\projects\\myproject\\ramune-harness\\.ramune\\evidence\\final-qa-20261101\\wsl-status-kept.stderr.log",
+    "bytes": 0,
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  }
+}

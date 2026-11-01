@@ -1,0 +1,39 @@
+{
+  "ok": true,
+  "status": "ok",
+  "final": "RAMUNE_VALUE=5",
+  "payloads": [
+    {
+      "text": "RAMUNE_VALUE=5",
+      "mediaUrl": null
+    }
+  ],
+  "usage": {
+    "input": 11031,
+    "output": 40,
+    "cacheRead": 0,
+    "cacheWrite": 0,
+    "reasoningTokens": 437,
+    "total": 11071,
+    "cost": {
+      "total": 0
+    }
+  },
+  "codeModeEngaged": false,
+  "assistantTurns": 2,
+  "bridgeCalls": {
+    "search": 0,
+    "describe": 0,
+    "call": 0
+  },
+  "toolSummary": {
+    "calls": 2,
+    "tools": [
+      "read"
+    ],
+    "failures": 0
+  },
+  "model": "gemini-3.8-flash-high",
+  "provider": "cliproxy",
+  "sessionId": "07ab7a91-3473-4944-99ed-2bbd2c0ae0a0"
+}

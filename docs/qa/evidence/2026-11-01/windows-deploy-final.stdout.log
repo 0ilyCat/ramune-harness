@@ -1,0 +1,5 @@
+
+> ramune-harness@0.1.0 deploy:windows
+> powershell -NoProfile -ExecutionPolicy Bypass -File scripts/deploy-windows.ps1
+
+Ramune Harness ÒÑ²¿Êð£ºhttp://127.0.0.1:4317£¨PID 20024£©

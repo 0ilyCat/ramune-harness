@@ -1,0 +1,24 @@
+{
+  "label": "wsl-browser",
+  "startedAt": "2026-11-01T07:26:44.266Z",
+  "finishedAt": "2026-11-01T07:27:07.143Z",
+  "command": "npm",
+  "args": [
+    "run",
+    "test:e2e",
+    "--",
+    "--output=test-results/final-wsl"
+  ],
+  "cwd": "D:\\projects\\myproject\\ramune-harness",
+  "exitCode": 0,
+  "stdout": {
+    "path": "D:\\projects\\myproject\\ramune-harness\\.ramune\\evidence\\final-qa-20261101\\wsl-browser.stdout.log",
+    "bytes": 567,
+    "sha256": "6346d6ffa1f32cbe4d009edc25dffd1de3db2f7eea221cc404c629f3a921f33c"
+  },
+  "stderr": {
+    "path": "D:\\projects\\myproject\\ramune-harness\\.ramune\\evidence\\final-qa-20261101\\wsl-browser.stderr.log",
+    "bytes": 164,
+    "sha256": "646a5d3f1704854b44151ee666d24e323e81b76eed55b384de69574d10dc9024"
+  }
+}

@@ -1,0 +1,21 @@
+{
+  "label": "wsl-models",
+  "startedAt": "2026-11-01T07:27:07.434Z",
+  "finishedAt": "2026-11-01T07:27:07.713Z",
+  "command": "node",
+  "args": [
+    "scripts/qa-status.mjs"
+  ],
+  "cwd": "D:\\projects\\myproject\\ramune-harness",
+  "exitCode": 0,
+  "stdout": {
+    "path": "D:\\projects\\myproject\\ramune-harness\\.ramune\\evidence\\final-qa-20261101\\wsl-models.stdout.log",
+    "bytes": 1152,
+    "sha256": "29ad1a30629644a06f0821181eae28b37c724758329c9c9f7f505ef774c7e282"
+  },
+  "stderr": {
+    "path": "D:\\projects\\myproject\\ramune-harness\\.ramune\\evidence\\final-qa-20261101\\wsl-models.stderr.log",
+    "bytes": 0,
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  }
+}

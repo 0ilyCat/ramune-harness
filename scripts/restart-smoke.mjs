@@ -24,7 +24,10 @@ try {
   assert.equal(interrupted.status, 'interrupted'); assert.equal(interrupted.invocations[0].status, 'unknown');
   await new Promise(r => setTimeout(r, 300)); assert.equal(await readFile(join(dir, 'counter'), 'utf8'), '1', '重启不得自动重放');
   assert.equal((await api(`/runs/${run.id}/resume`, { action: 'continue', confirmed: true })).status, 400);
-  assert.equal((await api(`/runs/${run.id}/resume`, { action: 'retry', confirmed: true })).status, 200);
+  let resumed;
+  // 跨进程文件锁在崩溃后等待租约过期；这段时间不能抢占仍可能存活的执行者。
+  for (let i = 0; i < 80; i++) { resumed = await api(`/runs/${run.id}/resume`, { action: 'retry', confirmed: true }); if (resumed.status === 200) break; await new Promise(r => setTimeout(r, 250)); }
+  assert.equal(resumed.status, 200);
   let final;
   for (let i = 0; i < 100; i++) { final = (await api(`/runs/${run.id}`)).data; if (final.status !== 'running') break; await new Promise(r => setTimeout(r, 100)); }
   assert.equal(final.status, 'completed'); assert.equal(final.steps, 2); assert.equal(await readFile(join(dir, 'counter'), 'utf8'), '2');

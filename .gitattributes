@@ -1,0 +1,6 @@
+* text=auto eol=lf
+*.ps1 text eol=crlf
+*.png -text
+*.jpg -text
+docs/qa/evidence/** -text -whitespace
+*.zip -text

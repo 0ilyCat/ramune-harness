@@ -1,0 +1,17 @@
+{
+  "stdout": {
+    "path": "/home/ubuntu/.local/share/ramune-harness-qa-20261101/data/artifacts/3ee3f9ab-e1a2-44ae-a7e1-27e67ab2ed45/3db3ab23-7553-4543-bccf-906dd871abc2/stdout.log",
+    "bytes": 1532,
+    "sha256": "793e4a3b6a7eec93a350fe25d374810413fd4b6c3b5c09b3655d6fcf040ec516",
+    "truncated": false
+  },
+  "stderr": {
+    "path": "/home/ubuntu/.local/share/ramune-harness-qa-20261101/data/artifacts/3ee3f9ab-e1a2-44ae-a7e1-27e67ab2ed45/3db3ab23-7553-4543-bccf-906dd871abc2/stderr.log",
+    "bytes": 1132,
+    "sha256": "7862e40e7b9761a7037f47a372a52f25b35c60427cde8f748ea6133149fb0660",
+    "truncated": false
+  },
+  "exitCode": 0,
+  "cancelled": false,
+  "timedOut": false
+}

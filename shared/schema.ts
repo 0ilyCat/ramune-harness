@@ -5,7 +5,7 @@ export const nodeSchema = z.object({
   position: z.object({ x: z.number().finite(), y: z.number().finite() }),
   data: z.object({
     label: z.string().min(1).max(100), kind: z.enum(['agent', 'check', 'value', 'output']),
-    agentId: z.enum(['codex', 'claude']).optional(), role: z.enum(['builder', 'reviewer']).optional(),
+    agentId: z.enum(['codex', 'claude', 'openclaw']).optional(), role: z.enum(['builder', 'reviewer']).optional(),
     instructions: z.string().max(12000).default(''), model: z.string().max(100).optional(),
     executable: z.string().max(500).optional(), args: z.array(z.string().max(4000)).max(80).optional(),
     disabled: z.boolean().default(false),
@@ -26,7 +26,7 @@ export const runRequestSchema = z.object({
 export type RunRequest = z.infer<typeof runRequestSchema>;
 export type RunStatus = 'running' | 'completed' | 'failed' | 'cancelled' | 'interrupted' | 'exhausted';
 export interface TraceEvent { seq: number; time: string; type: string; nodeId?: string; invocationId?: string; data: unknown }
-export interface Invocation { id: string; nodeId: string; step: number; status: 'started' | 'completed' | 'failed' | 'unknown'; startedAt: string; finishedAt?: string; output?: string; outcome?: 'success' | 'failure'; sessionId?: string }
+export interface Invocation { id: string; nodeId: string; step: number; status: 'started' | 'completed' | 'failed' | 'unknown'; startedAt: string; finishedAt?: string; output?: string; outcome?: 'success' | 'failure'; sessionId?: string; artifactDir?: string }
 export interface RunRecord {
   id: string; status: RunStatus; createdAt: string; updatedAt: string; request: RunRequest; revision: string;
   nextNodeId?: string; activeInvocationId?: string; steps: number; invocations: Invocation[]; events: TraceEvent[]; context: string; error?: string;
@@ -54,7 +54,7 @@ export function validateGraph(workflow: Workflow) {
   if (reachable.size !== ids.size) throw new Error('存在未连接到入口的节点');
 }
 
-export function template(agentId: 'codex' | 'claude' = 'codex'): Workflow {
+export function template(agentId: NonNullable<CardData['agentId']> = 'codex'): Workflow {
   return workflowSchema.parse({ version: 1, name: '左右脑 · 构建与验收', entry: 'builder', nodes: [
     { id: 'builder', position: { x: 30, y: 130 }, data: { label: '左脑 · 构建者', kind: 'agent', agentId, role: 'builder', instructions: '实现用户需求，检查当前文件并写入真实代码。若有失败反馈，先修复再执行测试。结束时交接修改与验证结果。' } },
     { id: 'reviewer', position: { x: 360, y: 130 }, data: { label: '右脑 · 审查者', kind: 'agent', agentId, role: 'reviewer', instructions: '独立审查代码和测试覆盖，真实执行检查。发现问题请修复并再次验证，明确报告验收结果和剩余问题。' } },

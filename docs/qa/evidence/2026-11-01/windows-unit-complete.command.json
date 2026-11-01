@@ -1,0 +1,23 @@
+{
+  "label": "windows-unit-complete",
+  "startedAt": "2026-11-01T07:38:29.310Z",
+  "finishedAt": "2026-11-01T07:38:35.489Z",
+  "command": "npm",
+  "args": [
+    "test",
+    "--",
+    "--reporter=verbose"
+  ],
+  "cwd": "D:\\projects\\myproject\\ramune-harness",
+  "exitCode": 0,
+  "stdout": {
+    "path": "D:\\projects\\myproject\\ramune-harness\\.ramune\\evidence\\final-qa-20261101\\windows-unit-complete.stdout.log",
+    "bytes": 2514,
+    "sha256": "b2a0427b79dbc5e4cc282e09528938b20efc70c4e6cc2c476dabaf6532b0ca94"
+  },
+  "stderr": {
+    "path": "D:\\projects\\myproject\\ramune-harness\\.ramune\\evidence\\final-qa-20261101\\windows-unit-complete.stderr.log",
+    "bytes": 0,
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  }
+}

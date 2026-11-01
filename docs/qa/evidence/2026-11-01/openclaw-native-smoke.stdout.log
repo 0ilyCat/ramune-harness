@@ -1,0 +1,13 @@
+{
+  "ok": false,
+  "status": "error",
+  "final": "",
+  "payloads": [],
+  "model": null,
+  "provider": null,
+  "sessionId": "2ac904ae-d670-448a-9da4-c242a75c0a16",
+  "error": {
+    "message": "State directory does not exist: /home/ubuntu/.local/share/ramune-harness-qa-20261101/native-smoke-state | ENOENT: no such file or directory, stat '/home/ubuntu/.local/share/ramune-harness-qa-20261101/native-smoke-state' | ENOENT",
+    "kind": "exception"
+  }
+}

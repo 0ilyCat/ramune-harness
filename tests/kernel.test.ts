@@ -54,6 +54,14 @@ describe('顺序执行与持久化', () => {
     expect(run.status).toBe('cancelled'); expect(run.invocations[0].status).toBe('unknown');
     await expect(kernel.resume(run.id, 'continue')).rejects.toThrow('必须明确选择');
   });
+  test('不同服务数据目录也不能同时运行同一真实工作目录', async () => {
+    const { dir, store } = await setup();
+    const first = new Kernel(store), second = new Kernel(new Store(join(dir, 'other-data')));
+    const workflow = graph([{ id: 'check', data: { kind: 'check', label: '长任务', executable: process.execPath, args: ['-e', 'console.log("ready");setTimeout(()=>{},60000)'] } }]);
+    const run = await first.start(request(workflow, dir));
+    try { await expect(second.start(request(workflow, dir))).rejects.toThrow(); }
+    finally { first.cancel(run.id); await settled(first, run); }
+  });
   test('进程重启将 started 识别为 unknown，恢复必须人工明确决策', async () => {
     const { dir, store } = await setup();
     const workflow = graph([{ id: 'value', data: { kind: 'value', label: '输入', instructions: 'done' } }]);
@@ -63,6 +71,14 @@ describe('顺序执行与持久化', () => {
     expect(run.status).toBe('interrupted'); expect(run.invocations[0].status).toBe('unknown');
     await expect(kernel.resume(run.id, 'continue')).rejects.toThrow('必须明确选择');
     await settled(kernel, await kernel.resume(run.id, 'retry')); expect(run.status).toBe('completed'); expect(run.invocations).toHaveLength(2);
+  });
+  test('普通事件预算已经耗尽时，服务重启仍能保存中断与未知状态', async () => {
+    const { dir, store } = await setup();
+    const workflow = graph([{ id: 'value', data: { kind: 'value', label: '输入' } }]);
+    const now = new Date().toISOString();
+    store.save({ id: 'budget-crash', status: 'running', createdAt: now, updatedAt: now, request: request(workflow, dir), revision: 'fixture', nextNodeId: 'value', activeInvocationId: 'call', steps: 1, context: '', invocations: [{ id: 'call', nodeId: 'value', step: 1, status: 'started', startedAt: now }], events: Array.from({ length: 10000 }, (_, i) => ({ seq: i + 1, time: now, type: 'process.stdout', data: { text: '' } })) });
+    const recovered = new Store(store.dir).get('budget-crash');
+    expect(recovered.status).toBe('interrupted'); expect(recovered.invocations[0].status).toBe('unknown'); expect(recovered.events.at(-1)?.type).toBe('run.interrupted');
   });
   test('预算与工作目录输入校验', async () => {
     const { dir, store } = await setup(); const workflow = graph([{ id: 'v', data: { kind: 'value', label: '输入' } }]);

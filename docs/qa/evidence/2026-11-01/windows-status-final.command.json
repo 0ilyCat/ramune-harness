@@ -1,0 +1,22 @@
+{
+  "label": "windows-status-final",
+  "startedAt": "2026-11-01T07:41:59.798Z",
+  "finishedAt": "2026-11-01T07:41:59.942Z",
+  "command": "node",
+  "args": [
+    "scripts/qa-status.mjs",
+    "http://127.0.0.1:4317"
+  ],
+  "cwd": "D:\\projects\\myproject\\ramune-harness",
+  "exitCode": 1,
+  "stdout": {
+    "path": "D:\\projects\\myproject\\ramune-harness\\.ramune\\evidence\\final-qa-20261101\\windows-status-final.stdout.log",
+    "bytes": 0,
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  "stderr": {
+    "path": "D:\\projects\\myproject\\ramune-harness\\.ramune\\evidence\\final-qa-20261101\\windows-status-final.stderr.log",
+    "bytes": 377,
+    "sha256": "f6c077c3a6769691d5d54baf78f47c29d4461ccf92db74019fceab5dbb7ea108"
+  }
+}

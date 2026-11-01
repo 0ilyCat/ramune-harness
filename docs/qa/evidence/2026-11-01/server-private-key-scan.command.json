@@ -1,0 +1,24 @@
+{
+  "label": "server-private-key-scan",
+  "startedAt": "2026-11-01T07:49:45.069Z",
+  "finishedAt": "2026-11-01T07:49:45.818Z",
+  "command": "ssh",
+  "args": [
+    "-o",
+    "BatchMode=yes",
+    "tencent",
+    "python3 /tmp/ramune-verify-private-evidence.py"
+  ],
+  "cwd": "D:\\projects\\myproject\\ramune-harness",
+  "exitCode": 0,
+  "stdout": {
+    "path": "D:\\projects\\myproject\\ramune-harness\\.ramune\\evidence\\final-qa-20261101\\server-private-key-scan.stdout.log",
+    "bytes": 54,
+    "sha256": "256d1ffd921a57d5deaf9c089bd25e8e3645cb02c52def32f4ac6115a42243b4"
+  },
+  "stderr": {
+    "path": "D:\\projects\\myproject\\ramune-harness\\.ramune\\evidence\\final-qa-20261101\\server-private-key-scan.stderr.log",
+    "bytes": 0,
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  }
+}

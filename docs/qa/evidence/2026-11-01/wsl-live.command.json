@@ -1,0 +1,22 @@
+{
+  "label": "wsl-live",
+  "startedAt": "2026-11-01T07:27:07.925Z",
+  "finishedAt": "2026-11-01T07:30:26.835Z",
+  "command": "npm",
+  "args": [
+    "run",
+    "test:live"
+  ],
+  "cwd": "D:\\projects\\myproject\\ramune-harness",
+  "exitCode": 1,
+  "stdout": {
+    "path": "D:\\projects\\myproject\\ramune-harness\\.ramune\\evidence\\final-qa-20261101\\wsl-live.stdout.log",
+    "bytes": 3060,
+    "sha256": "94dd0c47e962820588732bcf3363dd14cfa837c264a8a1ed05aa3b57e5d8e806"
+  },
+  "stderr": {
+    "path": "D:\\projects\\myproject\\ramune-harness\\.ramune\\evidence\\final-qa-20261101\\wsl-live.stderr.log",
+    "bytes": 1335,
+    "sha256": "526a8da96544a81bc3fe37bc78d7fa76be91e111f96a893c9addcb57a184110d"
+  }
+}

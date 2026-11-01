@@ -1,0 +1,24 @@
+{
+  "label": "server-inspect",
+  "startedAt": "2026-11-01T06:48:40.581Z",
+  "finishedAt": "2026-11-01T06:48:41.305Z",
+  "command": "ssh",
+  "args": [
+    "-o",
+    "BatchMode=yes",
+    "tencent",
+    "python3 /tmp/ramune-inspect-20261101.py"
+  ],
+  "cwd": "D:\\projects\\myproject\\ramune-harness",
+  "exitCode": 0,
+  "stdout": {
+    "path": "D:\\projects\\myproject\\ramune-harness\\.ramune\\evidence\\final-qa-20261101\\server-inspect.stdout.log",
+    "bytes": 704,
+    "sha256": "a5b87a44eac64a1d957ebb8611467177810f70ec930bd19bc8248729acbfd01b"
+  },
+  "stderr": {
+    "path": "D:\\projects\\myproject\\ramune-harness\\.ramune\\evidence\\final-qa-20261101\\server-inspect.stderr.log",
+    "bytes": 0,
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  }
+}

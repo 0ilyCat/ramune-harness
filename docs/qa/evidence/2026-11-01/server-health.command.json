@@ -1,0 +1,24 @@
+{
+  "label": "server-health",
+  "startedAt": "2026-11-01T06:48:42.048Z",
+  "finishedAt": "2026-11-01T06:48:42.862Z",
+  "command": "ssh",
+  "args": [
+    "-o",
+    "BatchMode=yes",
+    "tencent",
+    "uname -sr; node --version; openclaw --version; systemctl is-active mihomo cliproxyapi; systemctl --user is-active openclaw-gateway; ss -ltn"
+  ],
+  "cwd": "D:\\projects\\myproject\\ramune-harness",
+  "exitCode": 0,
+  "stdout": {
+    "path": "D:\\projects\\myproject\\ramune-harness\\.ramune\\evidence\\final-qa-20261101\\server-health.stdout.log",
+    "bytes": 875,
+    "sha256": "aac3deb6306be97bdd621e10b6215a6520bf972b47322f2de6ff9601b45feea8"
+  },
+  "stderr": {
+    "path": "D:\\projects\\myproject\\ramune-harness\\.ramune\\evidence\\final-qa-20261101\\server-health.stderr.log",
+    "bytes": 0,
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  }
+}

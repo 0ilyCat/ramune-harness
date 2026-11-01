@@ -1,0 +1,24 @@
+{
+  "label": "server-unit-complete",
+  "startedAt": "2026-11-01T07:38:36.995Z",
+  "finishedAt": "2026-11-01T07:38:39.673Z",
+  "command": "ssh",
+  "args": [
+    "-o",
+    "BatchMode=yes",
+    "tencent",
+    "cd /home/ubuntu/.local/share/ramune-harness-qa-20261101/app && npm test -- --reporter=verbose"
+  ],
+  "cwd": "D:\\projects\\myproject\\ramune-harness",
+  "exitCode": 0,
+  "stdout": {
+    "path": "D:\\projects\\myproject\\ramune-harness\\.ramune\\evidence\\final-qa-20261101\\server-unit-complete.stdout.log",
+    "bytes": 3538,
+    "sha256": "48e8b9860f8a08fa7be53c73a97918a475c6d2800a9a331fc4ac25369a9fd7b0"
+  },
+  "stderr": {
+    "path": "D:\\projects\\myproject\\ramune-harness\\.ramune\\evidence\\final-qa-20261101\\server-unit-complete.stderr.log",
+    "bytes": 0,
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  }
+}

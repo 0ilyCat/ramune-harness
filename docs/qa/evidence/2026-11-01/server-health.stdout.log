@@ -1,0 +1,18 @@
+Linux 6.8.0-101-generic
+v24.21.0
+OpenClaw 2026.10.1 (e178c39)
+active
+active
+active
+State  Recv-Q Send-Q Local Address:Port  Peer Address:PortProcess
+LISTEN 0      511        127.0.0.1:18799      0.0.0.0:*          
+LISTEN 0      511        127.0.0.1:18789      0.0.0.0:*          
+LISTEN 0      4096   127.0.0.53%lo:53         0.0.0.0:*          
+LISTEN 0      4096       127.0.0.1:9090       0.0.0.0:*          
+LISTEN 0      5            0.0.0.0:8000       0.0.0.0:*          
+LISTEN 0      4096         0.0.0.0:22         0.0.0.0:*          
+LISTEN 0      4096      127.0.0.54:53         0.0.0.0:*          
+LISTEN 0      4096       127.0.0.1:7890       0.0.0.0:*          
+LISTEN 0      511            [::1]:18789         [::]:*          
+LISTEN 0      4096            [::]:22            [::]:*          
+LISTEN 0      4096               *:8317             *:*          

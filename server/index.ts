@@ -7,8 +7,13 @@ const port = Number(process.env.PORT || 4317);
 if (!Number.isInteger(port) || port < 1024 || port > 65535) throw new Error('PORT 必须在 1024 至 65535 之间');
 const dir = resolve(process.env.RAMUNE_DATA_DIR || '.ramune');
 const releaseLock = acquireDataLock(dir); process.once('exit', releaseLock);
-const { app, kernel } = createApp({ dir, port });
-const server = serve({ fetch: app.fetch, hostname: '127.0.0.1', port }, () => console.log(`Ramune Harness 已启动：http://127.0.0.1:${port}`));
+const { app, kernel, store } = createApp({ dir, port });
+store.changes.on('trace', ({ runId, event }) => {
+  if (!/^(run\.|invocation\.|check\.(command|result)|review\.|process\.artifacts|agent\.(command|result))/.test(event.type)) return;
+  const data = event.data || {};
+  console.log(JSON.stringify({ time: event.time, level: /failed|interrupted|lock_lost/.test(event.type) ? 'error' : data.outcome === 'failure' ? 'warn' : 'info', event: event.type, runId, nodeId: event.nodeId, invocationId: event.invocationId, seq: event.seq, outcome: data.outcome, exitCode: data.exitCode, sessionId: data.sessionId, error: data.error, trace: `runs/${runId}.events.jsonl` }));
+});
+const server = serve({ fetch: app.fetch, hostname: '127.0.0.1', port }, () => console.log(JSON.stringify({ time: new Date().toISOString(), level: 'info', event: 'server.started', url: `http://127.0.0.1:${port}`, pid: process.pid, node: process.version })));
 let stopping = false;
 function stop() {
   if (stopping) return; stopping = true;

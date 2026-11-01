@@ -2,7 +2,9 @@
 
 **A tiny loop. Everything else is a node. Intelligence is optional.**
 
-现有 AI Agent Harness 的轻量、可视化、可观察编排平台。使用 React Flow 连接构建者、审查者与独立检查，让已有 Codex / Claude Code 在真实工作目录中协作。
+现有 AI Agent Harness 的轻量、可视化、可观察编排平台。使用 React Flow 连接构建者、审查者与独立检查，让已有 Codex / Claude Code / OpenClaw 在真实工作目录中协作。
+
+![Ramune Harness 工作室](docs/images/studio-windows.png)
 
 ## 本机体验
 
@@ -13,7 +15,8 @@
 
 ## 功能
 
-- 真实 PATH 发现与原生登录诊断；Codex、Claude Code 流式适配。Gemini/OpenCode 只显示发现结果，不标记为可执行。
+- 真实 PATH 发现与原生登录诊断；Codex、Claude Code 流式适配，OpenClaw 原生 agent exec 与隔离 transcript 适配。Gemini/OpenCode 只显示发现结果，不标记为可执行。
+- 从现有私有代理配置读取真实模型目录，为节点提供可选模型 ID，不把凭据写入工作流。
 - 卡片拖拽、端口连接、节点配置、入口选择、禁用旁路、添加/删除、编辑撤销重做、工作流保存及 JSON 导入导出。
 - 左右脑模板：构建 → 审查 → 独立检查 → 输出；审查拒绝或测试失败回到构建，受调用预算和总超时约束。
 - Prompt、Session ID、原生工具事件、标准输出、退出码与结果检查器；支持筛选、搜索、SSE 断线重连及记录导出。
@@ -22,7 +25,9 @@
 
 ## 安装与运行
 
-要求 Node.js 24+，以及已安装并登录的 Codex 或 Claude Code。依赖版本由 `package-lock.json` 锁定；不需要再配置一套模型 API Key。
+要求 Node.js 24+，以及已配置可用模型的 Codex、Claude Code 或 OpenClaw。依赖版本由 `package-lock.json` 锁定；复用已有模型连接。
+
+已有 CLI Proxy 的环境可以复用网关凭据，无需 Claude 账号登录；本机 WSL 已配置到 Windows 现有代理。代理连接、模型选择和专用私有设置见[部署说明](docs/deployment.md)。
 
 ```sh
 npm ci
@@ -52,8 +57,8 @@ npm run test:live
 
 Trace 与工作流保存在被 Git 忽略的 `.ramune/`（WSL 使用独立目录）。输出中的环境密钥与常见 Token 会尽力脱敏，但执行记录仍可能包含用户代码、文件路径和敏感任务文本，导出前应检查。凭据由原生 Harness 读取，工作流不包含凭据。
 
-每行日志保留最多 32768 字符，交接最多 24000 字符，单运行最多 10000 条事件；超限会明确截断或终止。单机快照不提供多进程/分布式调度、无限日志或恰好一次执行保证。首版的内部工具事件属于 Harness，尚不支持能力边、任意插件、并行汇合和组合子图编辑。
+检查器展示字符串最多 32768 字符，交接最多 24000 字符，单运行普通事件最多 10000 条，终止事件保留空间。协议先完整解析；原始 stdout/stderr 独立保存并附 SHA-256，每流超过 64 MiB 明确停止并标记截断。原始日志不做自动脱敏，导出前须检查。跨进程工作目录租约防止并发写入；单机快照不提供分布式调度、无限日志或恰好一次执行保证。首版的内部工具事件属于 Harness，尚不支持能力边、任意插件、并行汇合和组合子图编辑。
 
 协议复用依据：[Codex 非交互模式](https://learn.chatgpt.com/docs/non-interactive-mode)、[Claude Code 程序化运行](https://code.claude.com/docs/en/headless)、[React Flow 拖拽与连接](https://reactflow.dev/examples/interaction/drag-and-drop)。
 
-实现与实测状态见[交付记录](docs/delivery.md)，长任务交接见[持久化交接](.scratch/autonomous-build/handoff.md)。
+最新实测见[三环境审查与五轮真实日志](docs/qa/2026-11-01.md)，包含 Windows / WSL 浏览器各 4/4、三环境回归各 20/20、服务器十次 OpenClaw 调用及 WSL 上游 429 限制。历史实现与实测见[交付记录](docs/delivery.md)，长任务交接见[持久化交接](.scratch/autonomous-build/handoff.md)。

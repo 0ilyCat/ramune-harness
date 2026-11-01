@@ -1,0 +1,22 @@
+{
+  "label": "windows-restart",
+  "startedAt": "2026-11-01T07:25:46.372Z",
+  "finishedAt": "2026-11-01T07:25:58.792Z",
+  "command": "npm",
+  "args": [
+    "run",
+    "test:restart"
+  ],
+  "cwd": "D:\\projects\\myproject\\ramune-harness",
+  "exitCode": 0,
+  "stdout": {
+    "path": "D:\\projects\\myproject\\ramune-harness\\.ramune\\evidence\\final-qa-20261101\\windows-restart.stdout.log",
+    "bytes": 153,
+    "sha256": "e661ecb11f76dd4a3e92a7b88ec7aa9d0c9f824fd82c9b4fa19db41bb5b3f845"
+  },
+  "stderr": {
+    "path": "D:\\projects\\myproject\\ramune-harness\\.ramune\\evidence\\final-qa-20261101\\windows-restart.stderr.log",
+    "bytes": 0,
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  }
+}

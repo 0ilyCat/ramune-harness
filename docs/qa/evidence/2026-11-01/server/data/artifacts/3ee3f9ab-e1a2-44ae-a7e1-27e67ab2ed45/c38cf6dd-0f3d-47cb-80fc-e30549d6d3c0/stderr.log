@@ -1,0 +1,8 @@
+[agent/embedded] tool-search: cataloged 5 tools behind compact prompt surface
+[provider-transport-fetch] [model-fetch] response provider=cliproxy api=openai-completions model=gemini-3.8-flash-high status=200 elapsedMs=3944 dispatcher=new contentType=text/event-stream
+[provider-transport-fetch] [model-fetch] response provider=cliproxy api=openai-completions model=gemini-3.8-flash-high status=200 elapsedMs=2960 dispatcher=reused contentType=text/event-stream
+[provider-transport-fetch] [model-fetch] response provider=cliproxy api=openai-completions model=gemini-3.8-flash-high status=200 elapsedMs=3947 dispatcher=reused contentType=text/event-stream
+[agents/agent-command] [agent] run 78cef320-c57a-4a9f-94bb-943dde7364bc ended with stopReason=stop
+[state/agent-db] agent database clean-close receipt: active-leases
+[session-sqlite] SQLite reclamation Worker failed pid=2220095 threadId=0 isMainThread=true reclamationKind=maintenance-plan elapsedMs=75 outcome=rejected error="Session mutation and executor cleanup failed | SQLite mutation Worker request was revoked | Agent database execution admission is closed" errorFrame="at createSqliteLifecycleAggregateError (file:///usr/local/lib/node_modules/openclaw/dist/sqlite-lifecycle-errors-DuOygjcn.mjs:28:9)"
+[state/agent-db] agent database clean-close receipt: written

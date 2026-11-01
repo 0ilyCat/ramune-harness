@@ -1,0 +1,22 @@
+{
+  "label": "windows-browser",
+  "startedAt": "2026-11-01T07:22:30.965Z",
+  "finishedAt": "2026-11-01T07:22:53.957Z",
+  "command": "npm",
+  "args": [
+    "run",
+    "test:e2e"
+  ],
+  "cwd": "D:\\projects\\myproject\\ramune-harness",
+  "exitCode": 0,
+  "stdout": {
+    "path": "D:\\projects\\myproject\\ramune-harness\\.ramune\\evidence\\final-qa-20261101\\windows-browser.stdout.log",
+    "bytes": 535,
+    "sha256": "2c0faaa99c2c5617017a67dca6e24ee9cf656ca174ad87ad450966c19c57c513"
+  },
+  "stderr": {
+    "path": "D:\\projects\\myproject\\ramune-harness\\.ramune\\evidence\\final-qa-20261101\\windows-browser.stderr.log",
+    "bytes": 350,
+    "sha256": "2d747f13a05ec7f20accf8c5c6cf75342871ffef0514907a9ed066db90f1e373"
+  }
+}

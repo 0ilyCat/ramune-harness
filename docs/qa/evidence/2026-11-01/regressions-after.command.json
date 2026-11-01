@@ -1,0 +1,23 @@
+{
+  "label": "regressions-after",
+  "startedAt": "2026-11-01T07:04:07.388Z",
+  "finishedAt": "2026-11-01T07:04:13.891Z",
+  "command": "npm",
+  "args": [
+    "test",
+    "--",
+    "--reporter=verbose"
+  ],
+  "cwd": "D:\\projects\\myproject\\ramune-harness",
+  "exitCode": 0,
+  "stdout": {
+    "path": "D:\\projects\\myproject\\ramune-harness\\.ramune\\evidence\\final-qa-20261101\\regressions-after.stdout.log",
+    "bytes": 2018,
+    "sha256": "583c3d62ecaeca2cf6ed0ed5ce084c9840491fcfb8fdad8918d4a8c56926cc2d"
+  },
+  "stderr": {
+    "path": "D:\\projects\\myproject\\ramune-harness\\.ramune\\evidence\\final-qa-20261101\\regressions-after.stderr.log",
+    "bytes": 0,
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  }
+}

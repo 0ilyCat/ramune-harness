@@ -1,0 +1,5 @@
+
+> ramune-harness@0.1.0 test:restart
+> node scripts/restart-smoke.mjs
+
+真实服务强制终止、重启、拒绝自动重放、明确重试验收通过

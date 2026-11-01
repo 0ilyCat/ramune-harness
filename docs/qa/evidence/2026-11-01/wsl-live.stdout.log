@@ -1,0 +1,22 @@
+
+> ramune-harness@0.1.0 test:live
+> node scripts/live-smoke.mjs
+
+{"stage":"discovery","agents":[{"id":"codex","name":"Codex","installed":false,"supported":true,"auth":"unknown","detail":"当前服务的 PATH 中未找到可执行文件"},{"id":"claude","name":"Claude Code","path":"/home/dwx/.nvm/versions/node/v24.15.0/bin/claude","installed":true,"supported":true,"version":"2.1.160 (Claude Code)","auth":"ready","detail":"已配置 CLI Proxy，本地凭据检查通过；有效性由真实调用验证"},{"id":"openclaw","name":"OpenClaw","installed":false,"supported":true,"auth":"unknown","detail":"当前服务的 PATH 中未找到可执行文件"},{"id":"gemini","name":"Gemini CLI","installed":false,"supported":false,"auth":"unknown","detail":"当前服务的 PATH 中未找到可执行文件"},{"id":"opencode","name":"OpenCode","installed":false,"supported":false,"auth":"unknown","detail":"当前服务的 PATH 中未找到可执行文件"}]}
+{"stage":"started","id":"abace0d6-1100-42c2-a431-9c072758f24c","workspace":"/home/dwx/.local/share/ramune-harness-final-qa-20261101/data/workspaces/acceptance-ad11e1a1"}
+{"seq":1,"type":"run.started"}
+{"seq":2,"type":"invocation.started","node":"builder"}
+{"seq":3,"type":"agent.prompt","node":"builder"}
+{"seq":4,"type":"agent.command","node":"builder"}
+{"seq":5,"type":"agent.event","node":"builder","providerType":"system"}
+{"seq":6,"type":"agent.event","node":"builder","providerType":"system"}
+{"seq":7,"type":"agent.event","node":"builder","providerType":"system"}
+{"seq":8,"type":"agent.event","node":"builder","providerType":"system"}
+{"seq":9,"type":"agent.event","node":"builder","providerType":"system"}
+{"seq":10,"type":"agent.event","node":"builder","providerType":"system"}
+{"seq":11,"type":"agent.event","node":"builder","providerType":"assistant"}
+{"seq":12,"type":"agent.event","node":"builder","providerType":"result"}
+{"seq":13,"type":"process.artifacts","node":"builder"}
+{"seq":14,"type":"agent.result","node":"builder"}
+{"seq":15,"type":"invocation.finished","node":"builder"}
+{"seq":16,"type":"run.failed","data":{"error":"左脑 · 构建者 失败，没有配置 failure 路由\nAPI Error: Request rejected (429) · All credentials for model gemini-3.8-flash-high are cooling down via provider antigravity (last error: {\n  \"error\": {\n    \"code\": 429,\n    \"message\": \"Resource has been exhausted (e.g. check quota).\",\n    \"status\": \"RESOURCE_EXHAUSTED\"\n  }\n})\n\nAPI Error: Request rejected (429) · All credentials for model gemini-3.8-flash-high are cooling down via provider antigravity (last error: {\n  \"error\": {\n    \"code\": 429,\n    \"message\": \"Resource has been exhausted (e.g. check quota).\",\n    \"status\": \"RESOURCE_EXHAUSTED\"\n  }\n})\nAPI Error: Request rejected (429) · All credentials for model gemini-3.8-flash-high are cooling down via provider antigravity (last error: {\n  \"error\": {\n    \"code\": 429,\n    \"message\": \"Resource has been exhausted (e.g. check quota).\",\n    \"status\": \"RESOURCE_EXHAUSTED\"\n  }\n})"}}

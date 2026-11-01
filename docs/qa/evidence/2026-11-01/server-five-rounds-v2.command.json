@@ -1,0 +1,24 @@
+{
+  "label": "server-five-rounds-v2",
+  "startedAt": "2026-11-01T07:22:26.193Z",
+  "finishedAt": "2026-11-01T07:26:40.179Z",
+  "command": "ssh",
+  "args": [
+    "-o",
+    "BatchMode=yes",
+    "tencent",
+    "bash /tmp/ramune-deploy-qa-20261101.sh"
+  ],
+  "cwd": "D:\\projects\\myproject\\ramune-harness",
+  "exitCode": 0,
+  "stdout": {
+    "path": "D:\\projects\\myproject\\ramune-harness\\.ramune\\evidence\\final-qa-20261101\\server-five-rounds-v2.stdout.log",
+    "bytes": 205244,
+    "sha256": "b3d9cef80eaedb125f2e6363b3d7a543ceb9b9ffe58589d0eede0d33d79fee41"
+  },
+  "stderr": {
+    "path": "D:\\projects\\myproject\\ramune-harness\\.ramune\\evidence\\final-qa-20261101\\server-five-rounds-v2.stderr.log",
+    "bytes": 750,
+    "sha256": "20cdb14163e8f3e1f975cdfb34555a7573aeddf29ec9c703a0af33e81e1302e8"
+  }
+}

@@ -1,29 +1,11 @@
 # 持久化交接
 
-更新时间：2026-10-25。
+更新时间：2026-11-01，Asia/Shanghai。
 
-## 当前阶段
+首版实现及最终审查已交付；最新状态以 [最终验收交接](../final-qa-20261101/handoff.md) 和 [三环境验收报告](../../docs/qa/2026-11-01.md) 为准。旧记录中的 577c6f88 不是当前活动运行。
 
-核心与 UI 已实现，正在最终复验和提交。用户已授权研发、双环境部署、测试及推送 origin；无需继续常规访谈。
+仓库为 `D:\projects\myproject\ramune-harness`，远程为 `https://github.com/0ilyCat/ramune-harness.git`。Windows 页面 4317、WSL 页面 4318；私有数据保留，不提交凭据。
 
-## 环境
+Windows / WSL 浏览器各 4/4，三环境单元与真实进程回归各 20/20，服务器两个 OpenClaw 卡片五轮 completed。WSL 额外原生编程受 429 配额限制，Windows 额外专用凭据实例被自动审批拒绝；不能宣称全部原生模型路径通过。2026-10-25 的 Windows 双 Codex completed 属于历史验收。
 
-- 仓库 D:\agent-task\ramune-harness；origin https://github.com/0ilyCat/ramune-harness.git；远端当前为空。
-- Windows Node 24.19.0、npm 11.17.0；Codex CLI 在 PATH 且 ChatGPT 登录有效。
-- WSL Ubuntu-24.04，systemd；Node 在 /home/dwx/.nvm/versions/node/v24.15.0/bin。
-- 部署计划：Windows 127.0.0.1:4317，WSL 127.0.0.1:4318，各自数据目录。
-
-## 待完成
-
-## 已验证
-
-- Windows 服务 PID 6704，127.0.0.1:4317，最终协议真实复验运行 `8f7d6388-96d1-4159-928d-4bfe40dcea45` 进行中；不能在它结束前重启此服务。
-- 初次双 Codex Session `34e82ac7-92bd-488f-8bd0-e4af6cc61b5e` 已 completed，独立 Node 测试 27/27；原始记录 `.ramune/runs/<id>.json`。
-- 12 个 Vitest 测试通过；3 个 Playwright 浏览器测试通过；真实服务强制结束、重启、unknown、不自动重放、明确重试的集成测试通过。
-- Ubuntu systemd 用户服务已运行；Claude Code 2.1.160 本地 auth status 显示 loggedIn，但真实调用 `de425b9f-6b34-4e5a-a566-a425d1baa58a` 返回 401 Invalid API Key。已异步提示用户，需要用户登录，不能声称 Linux Agent 闭环成功。
-- Windows 真实运行曾遇到 Codex 可恢复的 reconnect error 事件；已修复协议解析，只有最终失败事件或退出码失败才判失败，并新增真实流式子进程回归测试。
-- 页面截图 `.ramune/screenshots/studio-4317.png` 已检查，浏览器无页面错误。
-
-## 待完成
-
-等待最终真实运行，最终构建及两套服务部署到同一版、Linux 确定性/浏览器检查、最终截图与交付记录、Git commit/push 和远程核验。Linux Agent 认证单独保留阻塞；不要自动复制凭据或绕过原生权限。
+原始证据、失败尝试、SHA-256 清单及 ZIP 位于 `docs/qa/evidence/`；共享代理监听风险按用户指示保留。后续不重启或改写用户共享代理，不发送外部消息。

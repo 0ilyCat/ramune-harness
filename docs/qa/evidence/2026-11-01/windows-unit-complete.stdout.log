@@ -1,0 +1,33 @@
+
+> ramune-harness@0.1.0 test
+> vitest run --reporter=verbose
+
+
+ RUN  v5.0.5 D:/projects/myproject/ramune-harness
+
+ ✓ tests/agents.test.ts > 真实流式进程的重连警告被恢复后，最终 turn.completed 可成功 122ms
+ ✓ tests/agents.test.ts > 即便进程退出 0，最终 turn.failed 仍判为失败 105ms
+ ✓ tests/api.test.ts > 本地会话、Origin、Host、媒体类型与输入大小受到检查 42ms
+ ✓ tests/api.test.ts > SSE 重连优先 Last-Event-ID，避免从最初的 query 游标重放 41ms
+ ✓ tests/api.test.ts > 模型目录只返回模型标识，私有网关凭据不会出现在响应 72ms
+ ✓ tests/agents.test.ts > 超过展示上限的最终失败仍按完整协议判定，不能降级为成功 110ms
+ ✓ tests/kernel.test.ts > 顺序执行与持久化 > 无需模型即可执行真实进程、保存结果并重新读取 487ms
+ ✓ tests/agents.test.ts > 日志目录初始化失败时不能留下仍修改文件的子进程 615ms
+ ✓ tests/agents.test.ts > 原始 stdout 保留字节与行尾，SHA256 与实际文件一致 115ms
+ ✓ tests/agents.test.ts > OpenClaw 多行 JSON envelope 按原生状态解析 99ms
+ ✓ tests/kernel.test.ts > 顺序执行与持久化 > 失败回路执行到通过，每轮具有独立调用身份 807ms
+ ✓ tests/kernel.test.ts > 顺序执行与持久化 > 无限失败只能耗尽预算，不宣称成功 639ms
+ ✓ tests/kernel.test.ts > 顺序执行与持久化 > 失败未配置路由时，重试仍执行失败节点，不能空恢复为成功 923ms
+ ✓ tests/kernel.test.ts > 顺序执行与持久化 > 取消真实进程并保留未知副作用，不自动重放 663ms
+ ✓ tests/kernel.test.ts > 顺序执行与持久化 > 不同服务数据目录也不能同时运行同一真实工作目录 437ms
+ ✓ tests/kernel.test.ts > 顺序执行与持久化 > 进程重启将 started 识别为 unknown，恢复必须人工明确决策 230ms
+ ✓ tests/kernel.test.ts > 顺序执行与持久化 > 普通事件预算已经耗尽时，服务重启仍能保存中断与未知状态 144ms
+ ✓ tests/kernel.test.ts > 顺序执行与持久化 > 预算与工作目录输入校验 8ms
+ ✓ tests/kernel.test.ts > 顺序执行与持久化 > 审查进程退出 0 也必须有明确 PASS；缺失结论不能验收 205ms
+ ✓ tests/kernel.test.ts > 连接必须引用实际节点且端口不能歧义 1ms
+
+ Test Files  3 passed (3)
+      Tests  20 passed (20)
+   Start at  15:38:30
+   Duration  5.06s (tests 85%, import 12%, transform 3%)
+

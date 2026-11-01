@@ -1,0 +1,39 @@
+{
+  "ok": true,
+  "status": "ok",
+  "final": "已完成文件读取与验证：\n1. `fixture.json` 校验通过，`verification` 为 `RAMUNE_REAL_OPENCLAW_20261101`。\n2. `round-state.json` 中的 `value` 为 `8`。\n3. 上一节点传入的 `RAMUNE_VALUE=9` 正好为 `8 + 1`，检查正确。\n4. 累加计算：9 + 1 = 10。\n\nRAMUNE_VALUE=10\nRAMUNE_REVIEW: PASS",
+  "payloads": [
+    {
+      "text": "已完成文件读取与验证：\n1. `fixture.json` 校验通过，`verification` 为 `RAMUNE_REAL_OPENCLAW_20261101`。\n2. `round-state.json` 中的 `value` 为 `8`。\n3. 上一节点传入的 `RAMUNE_VALUE=9` 正好为 `8 + 1`，检查正确。\n4. 累加计算：9 + 1 = 10。\n\nRAMUNE_VALUE=10\nRAMUNE_REVIEW: PASS",
+      "mediaUrl": null
+    }
+  ],
+  "usage": {
+    "input": 16799,
+    "output": 157,
+    "cacheRead": 0,
+    "cacheWrite": 0,
+    "reasoningTokens": 752,
+    "total": 16956,
+    "cost": {
+      "total": 0
+    }
+  },
+  "codeModeEngaged": false,
+  "assistantTurns": 3,
+  "bridgeCalls": {
+    "search": 0,
+    "describe": 0,
+    "call": 0
+  },
+  "toolSummary": {
+    "calls": 2,
+    "tools": [
+      "read"
+    ],
+    "failures": 0
+  },
+  "model": "gemini-3.8-flash-high",
+  "provider": "cliproxy",
+  "sessionId": "deedddf3-d474-4e54-ad56-7acc0810b708"
+}

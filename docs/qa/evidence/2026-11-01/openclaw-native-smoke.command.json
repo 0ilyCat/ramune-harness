@@ -1,0 +1,24 @@
+{
+  "label": "openclaw-native-smoke",
+  "startedAt": "2026-11-01T07:05:48.780Z",
+  "finishedAt": "2026-11-01T07:05:51.423Z",
+  "command": "ssh",
+  "args": [
+    "-o",
+    "BatchMode=yes",
+    "tencent",
+    "NO_PROXY=localhost,127.0.0.1,::1 openclaw agent exec --config /home/ubuntu/.local/share/ramune-harness-qa-20261101/openclaw-qa.json --state-dir /home/ubuntu/.local/share/ramune-harness-qa-20261101/native-smoke-state --cwd /home/ubuntu/.local/share/ramune-harness-qa-20261101/workspace --model cliproxy/gemini-3.8-flash-high --json --message-file /home/ubuntu/.local/share/ramune-harness-qa-20261101/smoke-prompt.txt --timeout 90"
+  ],
+  "cwd": "D:\\projects\\myproject\\ramune-harness",
+  "exitCode": 1,
+  "stdout": {
+    "path": "D:\\projects\\myproject\\ramune-harness\\.ramune\\evidence\\final-qa-20261101\\openclaw-native-smoke.stdout.log",
+    "bytes": 453,
+    "sha256": "b57360913ddeccc1a926d10bbda176c633f6f056eebe5129e5dc3fef5b6ac115"
+  },
+  "stderr": {
+    "path": "D:\\projects\\myproject\\ramune-harness\\.ramune\\evidence\\final-qa-20261101\\openclaw-native-smoke.stderr.log",
+    "bytes": 229,
+    "sha256": "12c91e86bc559736a9f62ba1098628da3c1f4cc83c7833b91feff7f2cbd4b9c0"
+  }
+}

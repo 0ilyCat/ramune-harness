@@ -14,6 +14,7 @@ import { Store } from './store.js';
 import { Kernel } from './kernel.js';
 import { discoverAgents } from './agents.js';
 import type { AgentInfo } from '../shared/schema.js';
+import { modelCatalog } from './models.js';
 
 export function createApp(options: { dir: string; port: number; clientDir?: string; kernel?: Kernel }) {
   const store = options.kernel?.store || new Store(options.dir);
@@ -54,8 +55,9 @@ export function createApp(options: { dir: string; port: number; clientDir?: stri
   app.get('/api/health', c => c.json({ name: 'Ramune Harness', version: '0.1.0', status: 'ok' }));
   app.get('/api/session', c => { setCookie(c, cookie, token, { httpOnly: true, sameSite: 'Strict', path: '/', maxAge: 86400 }); c.header('Cache-Control', 'no-store'); return c.json({ ok: true }); });
   app.get('/api/environment', c => c.json({ platform: platform(), release: release(), node: process.version, cwd: process.cwd(), dataDir: resolve(options.dir), defaultWorkspace: resolve(options.dir, 'workspaces'), port: options.port }));
+  app.get('/api/models', async c => c.json(await modelCatalog(options.dir)));
   app.get('/api/agents', async c => c.json(await agents(c.req.query('refresh') === '1')));
-  app.get('/api/workflow', async c => { const saved = store.loadWorkflow(); if (saved) return c.json(workflowSchema.parse(saved)); const infos = await agents(); const available = infos.find(a => a.installed && a.supported && a.auth === 'ready') || infos.find(a => a.installed && a.supported); return c.json(template(available?.id === 'claude' ? 'claude' : 'codex')); });
+  app.get('/api/workflow', async c => { const saved = store.loadWorkflow(); if (saved) return c.json(workflowSchema.parse(saved)); const infos = await agents(); const available = infos.find(a => a.installed && a.supported && a.auth === 'ready') || infos.find(a => a.installed && a.supported); return c.json(template(available?.id === 'openclaw' ? 'openclaw' : available?.id === 'claude' ? 'claude' : 'codex')); });
   app.put('/api/workflow', async c => { const workflow = workflowSchema.parse(await c.req.json()); validateGraph(workflow); store.saveWorkflow(workflow); return c.json(workflow); });
   app.post('/api/workspaces/demo', async c => {
     const path = resolve(options.dir, 'workspaces', `acceptance-${randomUUID().slice(0, 8)}`);
@@ -72,7 +74,7 @@ export function createApp(options: { dir: string; port: number; clientDir?: stri
   app.get('/api/runs/:id/export', c => { c.header('Content-Disposition', `attachment; filename="ramune-${c.req.param('id')}.json"`); return c.json(store.get(c.req.param('id'))); });
   app.get('/api/runs/:id/events', c => {
     const run = store.get(c.req.param('id'));
-    let after = Number(c.req.query('after') || c.req.header('last-event-id') || 0);
+    let after = Number(c.req.header('last-event-id') || c.req.query('after') || 0);
     if (!Number.isSafeInteger(after) || after < 0) return c.json({ error: '无效事件游标' }, 400);
     return streamSSE(c, async stream => {
       let stopped = false, heartbeat = Date.now();

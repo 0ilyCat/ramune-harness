@@ -1,0 +1,22 @@
+{
+  "label": "build-with-native-sqlite",
+  "startedAt": "2026-11-01T07:22:26.027Z",
+  "finishedAt": "2026-11-01T07:22:30.514Z",
+  "command": "npm",
+  "args": [
+    "run",
+    "build"
+  ],
+  "cwd": "D:\\projects\\myproject\\ramune-harness",
+  "exitCode": 0,
+  "stdout": {
+    "path": "D:\\projects\\myproject\\ramune-harness\\.ramune\\evidence\\final-qa-20261101\\build-with-native-sqlite.stdout.log",
+    "bytes": 3064,
+    "sha256": "ee1a15556cb43e6d1134c85158f740345a5f946ddb786fbbc837f5efadf7bf65"
+  },
+  "stderr": {
+    "path": "D:\\projects\\myproject\\ramune-harness\\.ramune\\evidence\\final-qa-20261101\\build-with-native-sqlite.stderr.log",
+    "bytes": 360,
+    "sha256": "351b524197fb492920789369e7f1a271420c757633fbb553b280a181ac4c31a4"
+  }
+}

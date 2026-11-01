@@ -1,0 +1,23 @@
+{
+  "label": "unit-final",
+  "startedAt": "2026-11-01T07:13:25.788Z",
+  "finishedAt": "2026-11-01T07:13:31.945Z",
+  "command": "npm",
+  "args": [
+    "test",
+    "--",
+    "--reporter=verbose"
+  ],
+  "cwd": "D:\\projects\\myproject\\ramune-harness",
+  "exitCode": 0,
+  "stdout": {
+    "path": "D:\\projects\\myproject\\ramune-harness\\.ramune\\evidence\\final-qa-20261101\\unit-final.stdout.log",
+    "bytes": 2307,
+    "sha256": "96497a2966746649ef30fd020cebabbed5c93e496641328b24d27cb68c6a90ee"
+  },
+  "stderr": {
+    "path": "D:\\projects\\myproject\\ramune-harness\\.ramune\\evidence\\final-qa-20261101\\unit-final.stderr.log",
+    "bytes": 0,
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  }
+}

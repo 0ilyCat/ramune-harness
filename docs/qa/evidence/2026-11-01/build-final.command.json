@@ -1,0 +1,22 @@
+{
+  "label": "build-final",
+  "startedAt": "2026-11-01T07:15:28.963Z",
+  "finishedAt": "2026-11-01T07:15:42.879Z",
+  "command": "npm",
+  "args": [
+    "run",
+    "build"
+  ],
+  "cwd": "D:\\projects\\myproject\\ramune-harness",
+  "exitCode": 0,
+  "stdout": {
+    "path": "D:\\projects\\myproject\\ramune-harness\\.ramune\\evidence\\final-qa-20261101\\build-final.stdout.log",
+    "bytes": 2989,
+    "sha256": "d38a3576460f4cbcb8859dd5a84a40d509f584e62c221450e86946ce7e6e1341"
+  },
+  "stderr": {
+    "path": "D:\\projects\\myproject\\ramune-harness\\.ramune\\evidence\\final-qa-20261101\\build-final.stderr.log",
+    "bytes": 753,
+    "sha256": "ae31c0080b7fe374d6e3dacae2fa51fbf7b73657b3ddbf0eeb91fdd9162e6d25"
+  }
+}

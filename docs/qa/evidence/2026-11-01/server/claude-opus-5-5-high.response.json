@@ -1,0 +1,1 @@
+{"id":"req_vrtx_011CgbnRVvgKuRmfNrrfkyyn","object":"chat.completion","created":0,"model":"claude-opus-5-5-high","choices":[{"index":0,"message":{"role":"assistant","content":"RAMUNE_MODEL_OK","reasoning_content":null,"tool_calls":null},"finish_reason":"stop","native_finish_reason":"stop"}],"usage":{"completion_tokens":16,"total_tokens":44,"prompt_tokens":28}}

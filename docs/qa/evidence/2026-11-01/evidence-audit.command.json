@@ -1,0 +1,21 @@
+{
+  "label": "evidence-audit",
+  "startedAt": "2026-11-01T07:32:55.304Z",
+  "finishedAt": "2026-11-01T07:32:56.070Z",
+  "command": "node",
+  "args": [
+    "scripts/audit-qa-evidence.mjs"
+  ],
+  "cwd": "D:\\projects\\myproject\\ramune-harness",
+  "exitCode": 0,
+  "stdout": {
+    "path": "D:\\projects\\myproject\\ramune-harness\\.ramune\\evidence\\final-qa-20261101\\evidence-audit.stdout.log",
+    "bytes": 261,
+    "sha256": "b26e5837ec934e37140c661b050174cd21a5d1b4564fd2e8a4c0d1d7d52679a8"
+  },
+  "stderr": {
+    "path": "D:\\projects\\myproject\\ramune-harness\\.ramune\\evidence\\final-qa-20261101\\evidence-audit.stderr.log",
+    "bytes": 0,
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  }
+}

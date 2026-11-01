@@ -1,0 +1,31 @@
+
+> ramune-harness@0.1.0 test
+> vitest run --reporter=verbose
+
+
+[1m[30m[46m RUN [49m[39m[22m [36mv5.0.5 [39m[90m/home/ubuntu/.local/share/ramune-harness-qa-20261101/app[39m
+
+ [32m✓[39m tests/agents.test.ts[2m > [22m真实流式进程的重连警告被恢复后，最终 turn.completed 可成功[32m 52[2mms[22m[39m
+ [32m✓[39m tests/agents.test.ts[2m > [22m即便进程退出 0，最终 turn.failed 仍判为失败[32m 36[2mms[22m[39m
+ [32m✓[39m tests/api.test.ts[2m > [22m本地会话、Origin、Host、媒体类型与输入大小受到检查[32m 51[2mms[22m[39m
+ [32m✓[39m tests/agents.test.ts[2m > [22m超过展示上限的最终失败仍按完整协议判定，不能降级为成功[32m 39[2mms[22m[39m
+ [32m✓[39m tests/kernel.test.ts[2m > [22m顺序执行与持久化[2m > [22m无需模型即可执行真实进程、保存结果并重新读取[32m 96[2mms[22m[39m
+ [32m✓[39m tests/kernel.test.ts[2m > [22m顺序执行与持久化[2m > [22m失败回路执行到通过，每轮具有独立调用身份[32m 156[2mms[22m[39m
+ [32m✓[39m tests/kernel.test.ts[2m > [22m顺序执行与持久化[2m > [22m无限失败只能耗尽预算，不宣称成功[32m 112[2mms[22m[39m
+ [32m✓[39m tests/kernel.test.ts[2m > [22m顺序执行与持久化[2m > [22m失败未配置路由时，重试仍执行失败节点，不能空恢复为成功[32m 137[2mms[22m[39m
+ [32m✓[39m tests/agents.test.ts[2m > [22m日志目录初始化失败时不能留下仍修改文件的子进程[33m 606[2mms[22m[39m
+ [32m✓[39m tests/agents.test.ts[2m > [22m原始 stdout 保留字节与行尾，SHA256 与实际文件一致[32m 37[2mms[22m[39m
+ [32m✓[39m tests/agents.test.ts[2m > [22mOpenClaw 多行 JSON envelope 按原生状态解析[32m 33[2mms[22m[39m
+ [32m✓[39m tests/kernel.test.ts[2m > [22m顺序执行与持久化[2m > [22m取消真实进程并保留未知副作用，不自动重放[32m 81[2mms[22m[39m
+ [32m✓[39m tests/kernel.test.ts[2m > [22m顺序执行与持久化[2m > [22m不同服务数据目录也不能同时运行同一真实工作目录[32m 45[2mms[22m[39m
+ [32m✓[39m tests/kernel.test.ts[2m > [22m顺序执行与持久化[2m > [22m进程重启将 started 识别为 unknown，恢复必须人工明确决策[32m 44[2mms[22m[39m
+ [32m✓[39m tests/kernel.test.ts[2m > [22m顺序执行与持久化[2m > [22m普通事件预算已经耗尽时，服务重启仍能保存中断与未知状态[32m 52[2mms[22m[39m
+ [32m✓[39m tests/kernel.test.ts[2m > [22m顺序执行与持久化[2m > [22m预算与工作目录输入校验[32m 2[2mms[22m[39m
+ [32m✓[39m tests/kernel.test.ts[2m > [22m顺序执行与持久化[2m > [22m审查进程退出 0 也必须有明确 PASS；缺失结论不能验收[32m 47[2mms[22m[39m
+ [32m✓[39m tests/kernel.test.ts[2m > [22m连接必须引用实际节点且端口不能歧义[32m 1[2mms[22m[39m
+
+[2m Test Files [22m [1m[32m3 passed[39m[22m[90m (3)[39m
+[2m      Tests [22m [1m[32m18 passed[39m[22m[90m (18)[39m
+[2m   Start at [22m 15:26:54
+[2m   Duration [22m 1.24s[2m (tests 65%, import 22%, transform 12%, worker 1%)[22m
+

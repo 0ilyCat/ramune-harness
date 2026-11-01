@@ -1,0 +1,14 @@
+{
+  "time": "2026-11-01T07:49:46.009Z",
+  "verifiedServerFiles": 77,
+  "verifiedInvocationRawFiles": 40,
+  "nativeSessions": 10,
+  "nativeTools": [
+    "read"
+  ],
+  "nativeToolCalls": 20,
+  "terminalStatus": "completed",
+  "steps": 16,
+  "redactionsApplied": 0,
+  "secretPatternFiles": []
+}

@@ -1,0 +1,42 @@
+node:internal/modules/run_main:107
+    triggerUncaughtException(
+    ^
+
+AssertionError [ERR_ASSERTION]: 左脑 · 构建者 失败，没有配置 failure 路由
+API Error: Request rejected (429) · All credentials for model gemini-3.8-flash-high are cooling down via provider antigravity (last error: {
+  "error": {
+    "code": 429,
+    "message": "Resource has been exhausted (e.g. check quota).",
+    "status": "RESOURCE_EXHAUSTED"
+  }
+})
+
+API Error: Request rejected (429) · All credentials for model gemini-3.8-flash-high are cooling down via provider antigravity (last error: {
+  "error": {
+    "code": 429,
+    "message": "Resource has been exhausted (e.g. check quota).",
+    "status": "RESOURCE_EXHAUSTED"
+  }
+})
+API Error: Request rejected (429) · All credentials for model gemini-3.8-flash-high are cooling down via provider antigravity (last error: {
+  "error": {
+    "code": 429,
+    "message": "Resource has been exhausted (e.g. check quota).",
+    "status": "RESOURCE_EXHAUSTED"
+  }
+})
++ actual - expected
+
++ 'failed'
+- 'completed'
+
+    at file:///D:/projects/myproject/ramune-harness/scripts/live-smoke.mjs:28:12 {
+  generatedMessage: false,
+  code: 'ERR_ASSERTION',
+  actual: 'failed',
+  expected: 'completed',
+  operator: 'strictEqual',
+  diff: 'simple'
+}
+
+Node.js v24.19.0

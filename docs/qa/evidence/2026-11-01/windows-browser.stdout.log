@@ -1,0 +1,13 @@
+
+> ramune-harness@0.1.0 test:e2e
+> playwright test
+
+
+Running 4 tests using 1 worker
+
+  ok 1 tests\e2e\studio.spec.ts:6:1 › 慢速真实初始化响应不会覆盖刚添加的节点 (3.6s)
+  ok 2 tests\e2e\studio.spec.ts:18:1 › 画布可拖动、节点库可添加、配置及撤销重做 (1.9s)
+  ok 3 tests\e2e\studio.spec.ts:40:1 › 导入、保存、真实无模型运行、SSE 检查器及历史重载 (3.9s)
+  ok 4 tests\e2e\studio.spec.ts:68:1 › 原生拖入节点与手动端口连接可保存 (1.6s)
+
+  4 passed (17.6s)

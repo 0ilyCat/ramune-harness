@@ -1,4 +1,4 @@
-import { mkdirSync, readdirSync, readFileSync, openSync, writeSync, fsyncSync, closeSync, renameSync } from 'node:fs';
+import { mkdirSync, readdirSync, readFileSync, openSync, writeSync, fsyncSync, closeSync, renameSync, appendFileSync } from 'node:fs';
 import { join } from 'node:path';
 import { EventEmitter } from 'node:events';
 import type { RunRecord, TraceEvent, Workflow } from '../shared/schema.js';
@@ -32,11 +32,14 @@ export class Store {
     this.runs.set(run.id, run);
   }
   event(run: RunRecord, type: string, data: unknown, nodeId?: string, invocationId?: string): TraceEvent {
-    if (run.events.length >= 10000) throw new Error('事件预算耗尽（10000），请缩小任务范围');
+    const terminal = ['run.interrupted', 'run.failed', 'run.cancelled', 'run.exhausted', 'run.completed'].includes(type);
+    if (run.events.length >= 10000 && !terminal) throw new Error('事件预算耗尽（10000），请缩小任务范围');
     const event = { seq: run.events.length + 1, time: new Date().toISOString(), type, data, nodeId, invocationId };
     run.events.push(event);
     this.save(run);
+    appendFileSync(join(this.dir, 'runs', `${run.id}.events.jsonl`), JSON.stringify(event) + '\n', { mode: 0o600 });
     this.changes.emit(run.id, event);
+    this.changes.emit('trace', { runId: run.id, event });
     return event;
   }
   get(id: string) { const run = this.runs.get(id); if (!run) throw new Error('运行不存在'); return run; }

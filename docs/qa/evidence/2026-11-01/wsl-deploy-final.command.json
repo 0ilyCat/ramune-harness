@@ -1,0 +1,25 @@
+{
+  "label": "wsl-deploy-final",
+  "startedAt": "2026-11-01T07:42:36.850Z",
+  "finishedAt": "2026-11-01T07:42:52.436Z",
+  "command": "wsl",
+  "args": [
+    "-d",
+    "Ubuntu-24.04",
+    "--exec",
+    "bash",
+    "/mnt/d/projects/myproject/ramune-harness/scripts/deploy-linux.sh"
+  ],
+  "cwd": "D:\\projects\\myproject\\ramune-harness",
+  "exitCode": 0,
+  "stdout": {
+    "path": "D:\\projects\\myproject\\ramune-harness\\.ramune\\evidence\\final-qa-20261101\\wsl-deploy-final.stdout.log",
+    "bytes": 3332,
+    "sha256": "bec54a43075ab981434e8447f877e27fb932d020b57006ab4dbd67969fdb409a"
+  },
+  "stderr": {
+    "path": "D:\\projects\\myproject\\ramune-harness\\.ramune\\evidence\\final-qa-20261101\\wsl-deploy-final.stderr.log",
+    "bytes": 492,
+    "sha256": "33480f3abdace74a80a20433399f16a6197d900de9d25b77ac224e7110f24d51"
+  }
+}

@@ -1,0 +1,31 @@
+{
+  "label": "wsl-unit-complete",
+  "startedAt": "2026-11-01T07:38:39.681Z",
+  "finishedAt": "2026-11-01T07:38:47.713Z",
+  "command": "wsl",
+  "args": [
+    "-d",
+    "Ubuntu-24.04",
+    "--cd",
+    "/home/dwx/.local/share/ramune-harness-final-qa-20261101/app",
+    "--exec",
+    "env",
+    "PATH=/home/dwx/.nvm/versions/node/v24.15.0/bin:/usr/local/bin:/usr/bin:/bin",
+    "npm",
+    "test",
+    "--",
+    "--reporter=verbose"
+  ],
+  "cwd": "D:\\projects\\myproject\\ramune-harness",
+  "exitCode": 0,
+  "stdout": {
+    "path": "D:\\projects\\myproject\\ramune-harness\\.ramune\\evidence\\final-qa-20261101\\wsl-unit-complete.stdout.log",
+    "bytes": 3536,
+    "sha256": "362fd33de8422d2de1474c72a3ff466e5470ba8d3f7b4727e537efc89b9be909"
+  },
+  "stderr": {
+    "path": "D:\\projects\\myproject\\ramune-harness\\.ramune\\evidence\\final-qa-20261101\\wsl-unit-complete.stderr.log",
+    "bytes": 132,
+    "sha256": "b280c454d6f559e56eb3f5ed39f3ba084b8d1744a3ff7fe016b21ff86dea1aca"
+  }
+}

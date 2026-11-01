@@ -1,0 +1,3 @@
+QA_ENVIRONMENT {"platform":"win32","release":"10.0.26200","node":"v24.19.0","cwd":"D:\\projects\\myproject\\ramune-harness","dataDir":"D:\\projects\\myproject\\ramune-harness\\.ramune","defaultWorkspace":"D:\\projects\\myproject\\ramune-harness\\.ramune\\workspaces","port":4317}
+QA_MODELS {"status":200,"data":{"configured":false,"models":[]}}
+QA_RUN_STATUS {"id":"8f7d6388-96d1-4159-928d-4bfe40dcea45","status":"completed","steps":4,"invocations":[{"node":"builder","status":"completed","session":"01a171de-2859-7692-a385-883f68e5b1aa"},{"node":"reviewer","status":"completed","session":"01a171df-743c-7702-9266-968b0dc24b63"},{"node":"check","status":"completed"},{"node":"done","status":"completed"}],"rounds":["✔ \"Hello World\" (3.4028ms)"]}
